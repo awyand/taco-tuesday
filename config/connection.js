@@ -1,8 +1,6 @@
 // Require mysql package
 var mysql = require("mysql");
 
-
-
 // JawsDB creation for Heroku deployment
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
@@ -28,4 +26,5 @@ connection.connect(function(err) {
   }
 });
 
+// Export connection
 module.exports = connection;

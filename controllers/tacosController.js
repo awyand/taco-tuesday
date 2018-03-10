@@ -9,17 +9,20 @@ var router = express.Router();
 // Create routes and set up logic with routes
 // Get index and all tacos route
 router.get("/", function(req, res) {
+  // Call taco selectAll method
   taco.selectAll(function(data) {
-    var testObject = {
+    // Store array of tacos (data) in an obeject with tacos key
+    var tacosObject = {
       tacos: data
     };
-    console.log(testObject);
-    res.render("index", testObject);
+    // Render index view with tacosObject
+    res.render("index", tacosObject);
   });
 });
 
 // Insert new taco route
 router.post("/api/tacos", function(req, res) {
+  // Call taco insertOne method, passing column names and values
   taco.insertOne("(taco_name, gromphed)", `("${req.body.taco_name}", ${req.body.gromphed})`, function(result) {
     // Send back ID of new taco
     res.json({id: result.insertId});
@@ -33,6 +36,7 @@ router.put("/api/tacos/:id", function(req, res) {
   // Set update
   var update = `gromphed = ${req.body.gromphed}`;
 
+  // Call taco updateOne method, passing update and condition
   taco.updateOne(update, condition, function(result) {
     // Handle result conditions
     if (result.changedRows === 0) {

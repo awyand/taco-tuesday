@@ -1,16 +1,23 @@
+<!-- Each taco object is rendered as a card -->
 <div class="card taco-card">
   <div class="card-header">Taco #{{id}}</div>
   <div class="card-body">
     <div class="row">
+      <!-- Taco Image Column -->
       <div class="col-4">
         <img src="assets/images/taco.png" alt="taco" class="card-taco-img">
       </div>
+      <!-- Taco Information Column -->
       <div class="col-8 center-content">
         <h5 class="card-title">{{taco_name}}</h5>
+        <!-- If taco has gromphed = true in db -->
+        <!-- Render button with new gromph value (what gromphed boolean will be changed to) of false -->
         {{#if gromphed}}
           <button class="btn btn-primary change-gromph" data-id="{{id}}" data-newgromph="{{gromph}}">
             <i class="fas fa-redo-alt"></i>&nbsp;&nbsp;Return To Menu
           </button>
+          <!-- If taco has gromphed = false in db -->
+          <!-- Render button with new gromph value (what gromphed boolean will be changed to) of true -->
         {{else}}
           <button class="btn btn-primary change-gromph" data-id="{{id}}" data-newgromph="{{gromph}}">
             <i class="fas fa-utensils"></i>&nbsp;&nbsp;Gromph Taco
