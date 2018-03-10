@@ -1,0 +1,29 @@
+<h1>Tacos</h1>
+
+<h2>Not Gromphed</h2>
+<ul>
+  {{#each tacos}}
+    {{#unless gromphed}}
+      {{> taco-block gromph=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Gromphed</h2>
+<ul>
+  {{#each tacos}}
+    {{#if gromphed}}
+      {{> taco-block gromph=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Taco</h2>
+<form>
+  <div class="form-group">
+    <label for="new-taco-input">Enter Taco Name</label>
+    <input type="text" class="form-control" id="new-taco-input" aria-describedby="taco-required" placeholder="El Pastor Taco">
+    <small id="taco-required" class="form-text text-muted">Taco Name Required</small>
+    <button class="btn btn-primary" id="add-taco-btn">Add Taco</button>
+  </div>
+</form>
