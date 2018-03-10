@@ -1,0 +1,104 @@
+html,
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background-color: rgba(248,193,99,0.4);
+}
+
+.center-content {
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #C0463A;
+  outline: none;
+  border: none;
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: #7D2E26;
+  outline: none;
+  border: none;
+}
+
+.header {
+  background-color: #C0463A;
+  color: white;
+  height: 160px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,.4);
+}
+
+.header-text {
+  padding-top: 30px;
+}
+
+.header-title {
+  font-weight: 700;
+  font-size: 60px;
+}
+
+.header-tagline {
+  margin-bottom: 0;
+}
+
+.main-container {
+  margin-top: 20px;
+}
+
+.main-container-col {
+  margin-top: 20px;
+}
+
+.side-col {
+  background-color: rgba(78,92,43,0.7);
+  box-shadow: 2px 2px 10px rgba(0,0,0,.4);
+}
+
+.col-header {
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.side-col-header {
+  color: white;
+}
+
+.middle-col {
+  background-color: transparent;
+}
+
+#new-taco-input {
+  width: 80%;
+  margin: 0 auto;
+}
+
+small {
+  color: red;
+}
+
+#add-taco-btn {
+  margin-top: 5px;
+}
+
+.taco-card-list {
+  padding-left: 0;
+}
+
+.taco-card {
+  margin-bottom: 10px;
+}
+
+.card-taco-img {
+  width: 100%;
+}
+
+.footer {
+  background-color: #C0463A;
+  color: white;
+  height: 160px;
+  margin-top: 40px;
+  text-align: center;
+  padding: 80px 0;
+}

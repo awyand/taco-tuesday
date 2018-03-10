@@ -1,29 +1,53 @@
-<h1>Tacos</h1>
-
-<h2>Not Gromphed</h2>
-<ul>
-  {{#each tacos}}
-    {{#unless gromphed}}
-      {{> taco-block gromph=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Gromphed</h2>
-<ul>
-  {{#each tacos}}
-    {{#if gromphed}}
-      {{> taco-block gromph=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Taco</h2>
-<form>
-  <div class="form-group">
-    <label for="new-taco-input">Enter Taco Name</label>
-    <input type="text" class="form-control" id="new-taco-input" aria-describedby="taco-required" placeholder="El Pastor Taco">
-    <small id="taco-required" class="form-text text-muted">Taco Name Required</small>
-    <button class="btn btn-primary" id="add-taco-btn">Add Taco</button>
+<!-- Header -->
+<div class="container-fluid header center-content">
+  <div class="container header-text">
+    <h1 class="header-title">TACO TUESDAY</h1>
+    <p class="header-tagline">it's time to gromph some tacos</p>
   </div>
-</form>
+</div>
+
+<div class="container main-container">
+  <div class="row">
+    <!-- Menu Column -->
+    <div class="col-lg-4 main-container-col side-col center-content">
+      <h2 class="col-header side-col-header">MENU</h2>
+      <ul class="taco-card-list">
+        {{#each tacos}}
+          {{#unless gromphed}}
+            {{> taco-block gromph=true}}
+          {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+
+    <!-- Add Taco Column -->
+    <div class="col-lg-4 main-container-col middle-col center-content">
+      <h2 class="col-header">ADD A TACO</h2>
+      <form>
+        <div class="form-group">
+          <label for="new-taco-input">Enter Taco Name</label>
+          <input type="text" class="form-control" id="new-taco-input" aria-describedby="taco-required" placeholder="El Pastor Taco">
+          <small id="taco-required" class="form-text">Taco Name Required</small>
+          <button class="btn btn-primary" id="add-taco-btn"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add Taco</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Gromphed Column -->
+    <div class="col-lg-4 main-container-col side-col center-content">
+      <h2 class="col-header side-col-header">GROMPHED</h2>
+      <ul class="taco-card-list">
+        {{#each tacos}}
+          {{#if gromphed}}
+            {{> taco-block gromph=false}}
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="container-fluid footer">
+  <p>&copy; Aaron Wyand 2018</p>
+</div>
