@@ -1,13 +1,20 @@
 // Require mysql package
 var mysql = require("mysql");
 
-// Create connection
-var connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "tacos_db"
-});
+
+
+// JawsDB creation for Heroku deployment
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  // Create connection on localhost if not using JawsDB
+  var connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "tacos_db"
+  });
+}
 
 // Connect
 connection.connect(function(err) {
